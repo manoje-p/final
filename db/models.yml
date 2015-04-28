@@ -1,0 +1,14 @@
+User:
+  name: string
+
+Card:
+  sku: integer
+
+Guest:
+  name: string
+  address: string
+  gift: string
+  status: string
+  wording: text
+  user_id: integer
+  card_id: integer
