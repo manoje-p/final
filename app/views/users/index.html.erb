@@ -1,0 +1,16 @@
+<html>
+<body>
+<div class="row">
+<% @users.each do |user| %> 
+<div class="col-sm-6">
+<div class="thumbnail">
+<div class="caption">
+<a href="/users/<%= user.id %>"> <%= user.name %> 
+</a>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</body>
+</html>
