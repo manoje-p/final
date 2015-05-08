@@ -3,13 +3,13 @@
 
 
 
-	<% guests=Guest.all where user_id:params["id"] %>
+	<% guests=Guest.all.where user_id:params["id"] %>
 <% guests.each do |guest| %>
-<p><%= guest.name %> </p>
-<p><%= guest.address %> </p>
-<p><%= guest.gift %> </p>
-<p><%= guest.status %> </p>
-<p><%= guest.wording %> </p>
-<p><% card= Card.find_by(id:guest.id, user_id:params["id"]) %> 
+<p>Name <%= guest.name %> </p>
+<p>Address <%= guest.address %> </p>
+<p>Gift <%= guest.gift %> </p>
+<p>Status <%= guest.status %> </p>
+<p>Wording <%= guest.wording %> </p>
+<p>Card <% card= Card.find_by(id:guest.id) %> 
 <%=card.sku%></p>
 <% end %>
