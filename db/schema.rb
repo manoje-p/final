@@ -13,4 +13,25 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "cards", force: true do |t|
+    t.integer "sku"
+  end
+
+  create_table "guests", force: true do |t|
+    t.string  "name"
+    t.string  "address"
+    t.string  "gift"
+    t.string  "status"
+    t.text    "wording"
+    t.integer "user_id"
+    t.integer "card_id"
+  end
+
+  add_index "guests", ["card_id"], name: "index_guests_on_card_id"
+  add_index "guests", ["user_id"], name: "index_guests_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string "name"
+  end
+
 end
