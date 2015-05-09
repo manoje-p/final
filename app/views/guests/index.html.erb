@@ -1,0 +1,16 @@
+<h3 class="page-header">
+  All Guests
+  <span class="pull-right">
+    <%= link_to "New Guest", new_guest_path, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+<ul>
+  <% @guests.each do |guest| %>
+    <li>
+    <%= link_to "Edit", edit_guest_url(guest), class: 'btn btn-sm btn-primary' %>
+    <%= link_to "Delete", guest_url(guest), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Seriously?' } %>
+      <%= link_to guest.name, guest_url(guest) %>
+    </li>
+  <% end %>
+</ul>

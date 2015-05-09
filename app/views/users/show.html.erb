@@ -1,15 +1,14 @@
-<% user=User.find_by(id: params["id"]) %>
-	<p> <%= user.name %> </p>
+<h1 class="title">
+  <%= @user.name %>
+</h1>
 
 
+<div class="col-md-3 actors">
+      <% @user.guests.each do |detail| %>
+        <li>Name <%= detail.guest.name %></li>
+        <li>Address <%= detail.guest.address %></li>
+        <li>Gift <%= detail.guest.gift %></li>
+        <li>Wording <%= detail.guest.wording %></li>
+      <% end %>
 
-	<% guests=Guest.all.where user_id:params["id"] %>
-<% guests.each do |guest| %>
-<p>Name <%= guest.name %> </p>
-<p>Address <%= guest.address %> </p>
-<p>Gift <%= guest.gift %> </p>
-<p>Status <%= guest.status %> </p>
-<p>Wording <%= guest.wording %> </p>
-<p>Card <% card= Card.find_by(id:guest.id) %> 
-<%=card.sku%></p>
-<% end %>
+</div>
