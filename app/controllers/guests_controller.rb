@@ -1,13 +1,13 @@
 class GuestsController < ApplicationController
-	def index
-    @guest=Guest.all
+  def index
+    @guests=Guest.all
   end
   def show
-    @guest=Guest.find_by(id: params["id"])
+    @guests=Guest.find_by(id: params["id"])
   end
 
   def new
-    @guest=Guest.new
+    @guests=Guest.new
   end
 
   def create
@@ -16,18 +16,12 @@ class GuestsController < ApplicationController
   end
 
   def edit
-    @guest=Guest.find_by(id: params["id"])
-  end
-
-  def update
-    @guest=Guest.find_by(id: params["id"])
-    @aguest.update(params["guest"])
-    redirect_to guests_url
+    @guests=Guest.find_by(id: params["id"])
   end
 
   def destroy
-    @guest=Guest.find_by(id: params["id"])
-    @guest.delete
+    @guests=Guest.find_by(id: params["id"])
+    @guests.delete
     redirect_to guests_url
   end
 
