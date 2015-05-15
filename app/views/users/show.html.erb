@@ -1,14 +1,14 @@
 <h1 class="title">
-  <%= @user.name %>
+  <%= @users.name %>
 </h1>
 
 
 <div class="col-md-3 actors">
-      <% @user.guests.each do |detail| %>
-        <li>Name <%= detail.guest.name %></li>
-        <li>Address <%= detail.guest.address %></li>
-        <li>Gift <%= detail.guest.gift %></li>
-        <li>Wording <%= detail.guest.wording %></li>
+      <% @users.guests.each do |detail| %>
+        <p><li>Name : <%= detail.name %></li>
+        <li>Address : <%= detail.address %></li>
+        <li>Gift : <%= detail.gift %></li>
+        <li>Wording : <%= detail.wording %></li></p>
       <% end %>
 
 </div>

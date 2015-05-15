@@ -1,11 +1,12 @@
-<h1><%= @guest.name %></h1>
+<h1><%= @guests.name %></h1>
 
 
 <ul>
-  <% @guest.roles.each do |detail| %>
-        <li>Name <%= detail.user.name %></li>
-        <li>Address <%= detail.user.address %></li>
-        <li>Gift <%= detail.user.gift %></li>
-        <li>Wording <%= detail.user.wording %></li>
-  <% end %>
+
+        <li>Name : <%= @guests.name %></li>
+        <li>Address : <%= @guests.address %></li>
+        <li>Wedding: </li>
+        <li>Gift : <%= @guests.gift %></li>
+        <li>Wording : <%= @guests.wording %></li>
+
 </ul>

@@ -12,7 +12,7 @@ class GuestsController < ApplicationController
 
   def create
     Guest.create(params["guest"])
-    redirect_to actors_url
+    redirect_to guests_url
   end
 
   def edit
@@ -25,5 +25,4 @@ class GuestsController < ApplicationController
     redirect_to guests_url
   end
 
-end
 end

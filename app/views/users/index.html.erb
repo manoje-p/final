@@ -1,11 +1,12 @@
 <html>
 <body>
 <div class="row">
+<p>Users</p>
 <% @users.each do |user| %> 
 <div class="col-sm-6">
 <div class="thumbnail">
 <div class="caption">
-<%= link_to user.name, user_url(movie) %> <%= user.name %> 
+<%= link_to user.name, user_url(user) %> 
 </a>
 </div>
 </div>
