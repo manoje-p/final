@@ -1,5 +1,7 @@
 User:
   name: string
+  email: string
+  password_digest: string
 
 Card:
   sku: integer

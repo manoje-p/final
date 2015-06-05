@@ -2,7 +2,7 @@ User.delete_all
 Card.delete_all
 Guest.delete_all
 
-manoje = User.create(name: "Manoje")
+manoje = User.create(name: "Manoje", email: "manoje120@gmail.com", password: "abc")
 hanne = User.create(name: "Hanne")
 emily = User.create(name: "Emily")
 reema = User.create(name: "Reema")

@@ -7,15 +7,18 @@ class UsersController < ApplicationController
 
   def show
     @users=User.find_by(id: params["id"])
+    Guest.create(params["guest"])
+    @guests=Guest.new
+   
   end
 
   def new
-    @users=User.new
+    @user=User.new
   end
 
   def create
-    User.create(params["user"])
-    redirect_to users_url
+    @user=User.create(params["user"])
+    redirect_to user_url(@user)
   end
 
 end

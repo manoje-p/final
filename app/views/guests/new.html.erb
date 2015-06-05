@@ -19,9 +19,6 @@
     <%= form.label :wording %>
     <%= form.text_field :wording, class: "form-control" %>
   </div>
-   <div class="form-group">
-    <%= form.label :user_id %>
-    <%= form.collection_select(:user_id, User.all, :id, :name, {}, { class: "form-control" }) %>
-  </div>
+
   <%= form.button 'Create Guest', class: "btn btn-success" %>
 <% end %>

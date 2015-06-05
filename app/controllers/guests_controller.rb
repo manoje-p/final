@@ -11,18 +11,24 @@ class GuestsController < ApplicationController
   end
 
   def create
-    Guest.create(params["guest"])
-    redirect_to guests_url
+    current_user.guests.create(params["guest"])
+    redirect_to user_url(current_user)
   end
 
   def edit
     @guests=Guest.find_by(id: params["id"])
   end
 
+  def update
+    @guests = Guest.find_by(id: params["id"])
+    @guests.update(params["guest"])
+    redirect_to user_url(@guests.user)
+  end
+
   def destroy
     @guests=Guest.find_by(id: params["id"])
     @guests.delete
-    redirect_to guests_url
+    redirect_to user_url(@guests.user)
   end
 
 end

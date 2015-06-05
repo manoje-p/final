@@ -1,14 +1,42 @@
-<h1 class="title">
-  <%= @users.name %>
-</h1>
+<div class="col-md-11 actors">
+      <table class="table">
+      <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Gift</th>
+      <th>Wording</th>
+      <th></th>
+      </tr>
+      <% @users.guests.each do |guest| %>
+      <tr>
+        <td><%= guest.name %></td>
+        <td><%= guest.address %></td>
+        <td><%= guest.gift %></td>
+        <td><%= guest.wording %></td>
+        <td>
 
-
-<div class="col-md-3 actors">
-      <% @users.guests.each do |detail| %>
-        <p><li>Name : <%= detail.name %></li>
-        <li>Address : <%= detail.address %></li>
-        <li>Gift : <%= detail.gift %></li>
-        <li>Wording : <%= detail.wording %></li></p>
+      <%= link_to "Edit", edit_guest_url(guest), class: 'btn btn-sm btn-primary' %>
+      <%= link_to "Delete", guest_url(guest), method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Seriously?' } %>
+      </td></tr>
       <% end %>
+
+	 <tr><%= form_for @guests do |form| %>
+      <td>  <div class="form-group">
+ 
+    <%= form.text_field :name, class: "form-control" %></div></td>
+      <td>    <div class="form-group">
+   
+    <%= form.text_field :address, class: "form-control" %></div></td>
+      <td>    <div class="form-group">
+    
+    <%= form.text_field :gift, class: "form-control" %></div></td>
+      <td>    <div class="form-group">
+
+    <%= form.text_field :wording, class: "form-control" %></div></td>
+      <td><%= form.button 'New Guest', class: "btn btn-success" %></td><% end %>
+ </tr>
+
+
+      </table>
 
 </div>
